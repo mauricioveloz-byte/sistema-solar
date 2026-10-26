@@ -123,3 +123,36 @@ if (detalleNeptuno) {
   volverNeptuno.addEventListener("click", mostrarFrente);
   destacarNeptuno.addEventListener("click", cambiarDestacado);
 }
+
+// Evalúa el cuestionario si está presente en la página actual.
+const formularioCuestionario = document.querySelector("#formulario-cuestionario");
+
+if (formularioCuestionario) {
+  const resultadoCuestionario = document.querySelector("#resultado-cuestionario");
+
+  formularioCuestionario.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const preguntas = formularioCuestionario.querySelectorAll("[data-respuesta]");
+    let aciertos = 0;
+
+    preguntas.forEach((pregunta) => {
+      const respuesta = pregunta.querySelector('input[type="radio"]:checked');
+
+      if (respuesta && respuesta.value === pregunta.dataset.respuesta) {
+        aciertos += 1;
+      }
+    });
+
+    const nombre = formularioCuestionario.elements.nombre.value.trim();
+    const saludo = nombre ? `${nombre}, obtuviste` : "Obtuviste";
+    resultadoCuestionario.textContent = `${saludo} ${aciertos} de ${preguntas.length} respuestas correctas.`;
+    resultadoCuestionario.hidden = false;
+    resultadoCuestionario.focus();
+  });
+
+  formularioCuestionario.addEventListener("reset", () => {
+    resultadoCuestionario.hidden = true;
+    resultadoCuestionario.textContent = "";
+  });
+}
