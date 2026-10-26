@@ -15,6 +15,17 @@ body {
 @keyframes entrada-pagina {
   from {
     opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes entrada-video {
+  from {
+    opacity: 0;
     transform: translateY(12px);
   }
   to {
@@ -41,7 +52,7 @@ p {
 }
 
 /* 2. Grid organiza encabezado, contenido, lateral y pie de página. */
-.page-layout {
+.pagina {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
@@ -55,7 +66,7 @@ p {
   animation: entrada-pagina 0.7s ease-out both;
 }
 
-.site-header {
+.encabezado {
   grid-area: header;
   padding: 20px;
   border-radius: 12px;
@@ -63,19 +74,19 @@ p {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
 }
 
-.brand {
+.marca {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.tagline {
+.lema {
   margin: 4px 0 16px;
   color: #c5d1df;
 }
 
 /* 3. Flexbox alinea los enlaces del menú y elimina las viñetas. */
-.nav-list {
+.menu {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
@@ -84,7 +95,7 @@ p {
   list-style: none;
 }
 
-.nav-list a {
+.menu a {
   display: inline-block;
   padding: 7px 10px;
   color: #ffffff;
@@ -92,14 +103,14 @@ p {
   transition: background-color 0.2s ease;
 }
 
-.nav-list a:hover,
-.nav-list a.current {
+.menu a:hover,
+.menu a.activo {
   color: #ffc857;
   background-color: #415a77;
 }
 
 /* 4. Apariencia de las áreas principales de cada página. */
-.main-content {
+.contenido {
   grid-area: content;
   min-width: 0;
   padding: 14px;
@@ -108,7 +119,7 @@ p {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
 }
 
-.side-note {
+.nota {
   grid-area: sidebar;
   align-self: start;
   padding: 18px;
@@ -117,15 +128,15 @@ p {
   background-color: #263b53;
 }
 
-.side-note h2 {
+.nota h2 {
   font-size: 1.1rem;
 }
 
-.side-note p {
+.nota p {
   color: #d2dce7;
 }
 
-.site-footer {
+.pie {
   grid-area: footer;
   display: flex;
   justify-content: space-between;
@@ -137,12 +148,12 @@ p {
   background-color: #1b263b;
 }
 
-.site-footer p {
+.pie p {
   margin: 0;
 }
 
 /* 5. Portada: texto y video se colocan en dos columnas. */
-.hero {
+.portada {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -150,54 +161,44 @@ p {
   padding: 15px 0 25px;
 }
 
-@keyframes hero-video-entrada {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-.hero h1,
-.page-intro h1 {
+.portada h1,
+.introduccion h1 {
   font-size: clamp(1.8rem, 6vw, 2.4rem);
   line-height: 1.2;
 }
 
-.hero-copy p,
-.page-intro p,
-.section-lead {
+.texto-portada p,
+.introduccion p,
+.resumen {
   color: #c5d1df;
 }
 
-.hero-video {
+.video-portada {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   border-radius: 12px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
-  animation: hero-video-entrada 0.8s ease-out both;
+  animation: entrada-video 0.8s ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-layout,
-  .hero-video {
+  .pagina,
+  .video-portada {
     animation: none;
   }
 }
 
-.eyebrow {
+.etiqueta {
   color: #58d6c5;
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.button-link {
+.boton {
   display: inline-block;
   padding: 10px 15px;
   color: #0c1b2a;
@@ -209,18 +210,18 @@ p {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.button-link:hover {
+.boton:hover {
   color: #0c1b2a;
   background-color: #ffc857;
   transform: translateY(-2px);
 }
 
 /* 6. Secciones de texto y datos breves. */
-.content-section {
+.seccion {
   margin: 25px 0;
 }
 
-.mission-list {
+.lista-misiones {
   position: relative;
   display: grid;
   gap: 14px;
@@ -228,7 +229,7 @@ p {
   padding-left: 22px;
 }
 
-.mission-list::before {
+.lista-misiones::before {
   position: absolute;
   top: 12px;
   bottom: 12px;
@@ -238,7 +239,7 @@ p {
   content: "";
 }
 
-.mission-item {
+.mision {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -254,7 +255,7 @@ p {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.mission-item::before {
+.mision::before {
   position: absolute;
   top: 24px;
   left: -23px;
@@ -266,47 +267,47 @@ p {
   content: "";
 }
 
-.mission-item:hover {
+.mision:hover {
   border-color: #58d6c5;
   transform: translateX(3px);
 }
 
-.mission-meta {
+.datos-mision {
   display: flex;
   grid-area: meta;
   flex-direction: column;
   gap: 2px;
 }
 
-.mission-year {
+.anio-mision {
   color: #ffc857;
   font-size: 1.35rem;
   font-weight: bold;
   line-height: 1.2;
 }
 
-.mission-milestone {
+.hito {
   color: #c5d1df;
   font-size: 0.75rem;
 }
 
-.mission-copy {
+.texto-mision {
   grid-area: copy;
   min-width: 0;
 }
 
-.mission-copy h2 {
+.texto-mision h2 {
   margin-bottom: 6px;
   color: #ffffff;
   font-size: 1.1rem;
 }
 
-.mission-copy p {
+.texto-mision p {
   margin: 0;
   color: #c5d1df;
 }
 
-.mission-tag {
+.tipo-mision {
   grid-area: tag;
   align-self: start;
   padding: 4px 9px;
@@ -316,29 +317,29 @@ p {
   font-size: 0.75rem;
 }
 
-.text-panel {
+.panel {
   padding: 18px;
   border-left: 4px solid #58d6c5;
   border-radius: 5px;
   background-color: #0d1b2a;
 }
 
-.text-panel p:last-child {
+.panel p:last-child {
   margin-bottom: 0;
 }
 
-.fact-strip,
-.planet-grid {
+.cifras,
+.rejilla-planetas {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
 }
 
-.fact-strip {
+.cifras {
   grid-template-columns: 1fr;
 }
 
-.fact-strip article {
+.cifras article {
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -346,17 +347,17 @@ p {
   background-color: #0d1b2a;
 }
 
-.fact-strip strong {
+.cifras strong {
   color: #ffc857;
   font-size: 1.7rem;
 }
 
-.fact-strip span {
+.cifras span {
   color: #c5d1df;
 }
 
 /* 7. Tarjetas de planetas: borde, sombra y movimiento al pasar el cursor. */
-.planet-card {
+.tarjeta {
   overflow: hidden;
   perspective: 1200px;
   border: 2px solid #415a77;
@@ -366,13 +367,13 @@ p {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.planet-card:hover {
+.tarjeta:hover {
   border-color: #58d6c5;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
   transform: translateY(-3px) scale(1.01);
 }
 
-.planet-card img {
+.tarjeta img {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -380,25 +381,25 @@ p {
   background-color: #0d1b2a;
 }
 
-.planet-card-inner {
+.interior {
   display: grid;
   grid-template: 1fr / 1fr;
   transform-style: preserve-3d;
   transition: transform 0.65s ease;
 }
 
-.planet-card-front,
-.planet-card-back {
+.frente,
+.reverso {
   grid-area: 1 / 1;
   backface-visibility: hidden;
 }
 
-.planet-card-front {
+.frente {
   display: flex;
   flex-direction: column;
 }
 
-.planet-card-back {
+.reverso {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -410,51 +411,51 @@ p {
   transform: rotateY(180deg);
 }
 
-.planet-card-back h3 {
+.reverso h3 {
   margin: 0;
   color: #ffc857;
 }
 
-.planet-card-back p {
+.reverso p {
   margin: 0;
   color: #c5d1df;
 }
 
-.planet-card.girada .planet-card-inner {
+.tarjeta.girada .interior {
   transform: rotateY(180deg);
 }
 
-.planet-card-copy {
+.texto-tarjeta {
   padding: 14px;
 }
 
-.planet-card-copy h3 {
+.texto-tarjeta h3 {
   margin-bottom: 5px;
   color: #ffc857;
 }
 
-.planet-card-copy p {
+.texto-tarjeta p {
   margin-bottom: 0;
   color: #c5d1df;
 }
 
 /* El JavaScript agrega esta clase cuando se destaca una tarjeta. */
-.planet-card.destacada {
+.tarjeta.resaltada {
   border-color: #ffc857;
   background-color: #263b53;
   box-shadow: 0 0 0 3px rgba(255, 200, 87, 0.25);
 }
 
 /* Botones que abren los detalles y destacan cada planeta. */
-.planet-card-actions {
+.botones-tarjeta {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   padding: 0 14px 14px;
 }
 
-.boton-detalles,
-.boton-destacar,
+.boton-detalle,
+.boton-resaltar,
 .boton-volver {
   min-height: 44px;
   padding: 9px 12px;
@@ -467,24 +468,24 @@ p {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.boton-detalles:hover,
-.boton-destacar:hover,
+.boton-detalle:hover,
+.boton-resaltar:hover,
 .boton-volver:hover {
   color: #0c1b2a;
   background-color: #58d6c5;
 }
 
-.button-link:focus-visible,
-.boton-detalles:focus-visible,
-.boton-destacar:focus-visible,
+.boton:focus-visible,
+.boton-detalle:focus-visible,
+.boton-resaltar:focus-visible,
 .boton-volver:focus-visible,
-.nav-list a:focus-visible {
+.menu a:focus-visible {
   outline: 3px solid #ffc857;
   outline-offset: 3px;
 }
 
 /* 8. Tabla comparativa de datos de los planetas. */
-.table-wrap {
+.tabla {
   max-width: 100%;
   overflow-x: auto;
   border-radius: 10px;
@@ -515,15 +516,15 @@ th {
 }
 
 /* 9. Cuestionario sobre los contenidos del Sistema Solar. */
-.quiz-form {
+.formulario {
   display: grid;
   gap: 18px;
   max-width: 760px;
   margin: 24px auto;
 }
 
-.quiz-field,
-.quiz-question {
+.campo,
+.pregunta {
   min-width: 0;
   margin: 0;
   padding: 16px;
@@ -532,14 +533,14 @@ th {
   background-color: #0d1b2a;
 }
 
-.quiz-field label,
-.quiz-question legend {
+.campo label,
+.pregunta legend {
   color: #ffffff;
   font-weight: bold;
 }
 
-.quiz-field input,
-.quiz-field select {
+.campo input,
+.campo select {
   display: block;
   width: 100%;
   min-height: 44px;
@@ -552,13 +553,13 @@ th {
   font: inherit;
 }
 
-.quiz-options {
+.opciones {
   display: grid;
   gap: 8px;
   margin-top: 12px;
 }
 
-.quiz-option {
+.opcion {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -569,11 +570,11 @@ th {
   cursor: pointer;
 }
 
-.quiz-option:hover {
+.opcion:hover {
   background-color: #1b263b;
 }
 
-.quiz-option input {
+.opcion input {
   flex: 0 0 auto;
   width: 18px;
   height: 18px;
@@ -581,13 +582,13 @@ th {
   accent-color: #58d6c5;
 }
 
-.quiz-actions {
+.botones-formulario {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.quiz-reset {
+.borrar {
   min-height: 44px;
   padding: 10px 15px;
   color: #ffffff;
@@ -599,12 +600,12 @@ th {
   cursor: pointer;
 }
 
-.quiz-reset:hover {
+.borrar:hover {
   color: #0c1b2a;
   background-color: #58d6c5;
 }
 
-.quiz-result {
+.resultado {
   padding: 14px;
   border-left: 4px solid #ffc857;
   border-radius: 5px;
@@ -613,15 +614,15 @@ th {
   font-weight: bold;
 }
 
-.quiz-result[hidden] {
+.resultado[hidden] {
   display: none;
 }
 
-.quiz-field input:focus-visible,
-.quiz-field select:focus-visible,
-.quiz-option input:focus-visible,
-.quiz-reset:focus-visible,
-.quiz-form .button-link:focus-visible {
+.campo input:focus-visible,
+.campo select:focus-visible,
+.opcion input:focus-visible,
+.borrar:focus-visible,
+.formulario .boton:focus-visible {
   outline: 3px solid #ffc857;
   outline-offset: 3px;
 }
@@ -631,58 +632,58 @@ th {
     padding: 10px;
   }
 
-  .page-layout {
+  .pagina {
     gap: 14px;
   }
 
-  .site-header {
+  .encabezado {
     padding: 16px;
   }
 
-  .main-content {
+  .contenido {
     padding: 12px;
   }
 
-  .nav-list a {
+  .menu a {
     min-height: 44px;
     padding: 9px 10px;
   }
 
-  .hero {
+  .portada {
     gap: 16px;
   }
 
-  .mission-item {
+  .mision {
     padding: 12px;
   }
 
-  .text-panel {
+  .panel {
     padding: 14px;
   }
 
-  .quiz-field,
-  .quiz-question {
+  .campo,
+  .pregunta {
     padding: 12px;
   }
 }
 
 /* En pantallas medianas, las tarjetas comparten filas. */
 @media (min-width: 481px) {
-  .planet-grid {
+  .rejilla-planetas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .fact-strip {
+  .cifras {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .main-content {
+  .contenido {
     padding: 20px;
   }
 }
 
 @media (min-width: 601px) {
-  .mission-item {
+  .mision {
     grid-template-columns: 105px minmax(0, 1fr) auto;
     grid-template-areas: "meta copy tag";
     align-items: start;
@@ -693,7 +694,7 @@ th {
 
 /* En pantallas grandes, el contenido y la barra lateral van en columnas. */
 @media (min-width: 761px) {
-  .page-layout {
+  .pagina {
     grid-template-columns: minmax(0, 1fr) 260px;
     grid-template-areas:
       "header header"
@@ -701,7 +702,7 @@ th {
       "footer footer";
   }
 
-  .hero {
+  .portada {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

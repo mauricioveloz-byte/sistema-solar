@@ -9,94 +9,94 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="page-layout">
-    <header class="site-header">
-      <a class="brand" href="index.html">EL SISTEMA SOLAR</a>
-      <p class="tagline">Un recorrido por nuestro vecindario cósmico</p>
+  <div class="pagina">
+    <header class="encabezado">
+      <a class="marca" href="index.html">EL SISTEMA SOLAR</a>
+      <p class="lema">Un recorrido por nuestro vecindario cósmico</p>
       <nav aria-label="Navegación principal">
-        <ul class="nav-list">
+        <ul class="menu">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="planetas.html">Planetas</a></li>
           <li><a href="misiones.html">Misiones</a></li>
-          <li><a class="current" aria-current="page" href="cuestionario.html">Cuestionario</a></li>
+          <li><a class="activo" aria-current="page" href="cuestionario.html">Cuestionario</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="main-content">
-      <section class="page-intro" aria-labelledby="titulo-principal">
-        <p class="eyebrow">Pon a prueba lo que aprendiste</p>
+    <main class="contenido">
+      <section class="introduccion" aria-labelledby="titulo-principal">
+        <p class="etiqueta">Pon a prueba lo que aprendiste</p>
         <h1 id="titulo-principal">Cuestionario del Sistema Solar</h1>
         <p>Responde estas preguntas sobre los planetas y las misiones espaciales. Al finalizar verás cuántas respuestas acertaste.</p>
       </section>
 
-      <form class="quiz-form" id="formulario-cuestionario">
-        <div class="quiz-field">
+      <form class="formulario" id="formulario-cuestionario">
+        <div class="campo">
           <label for="nombre">Tu nombre (opcional)</label>
           <input id="nombre" name="nombre" type="text" autocomplete="given-name" maxlength="50">
         </div>
 
-        <fieldset class="quiz-question" data-respuesta="ocho">
+        <fieldset class="pregunta" data-respuesta="ocho">
           <legend>1. ¿Cuántos planetas conocidos tiene el Sistema Solar?</legend>
-          <div class="quiz-options">
-            <label class="quiz-option"><input type="radio" name="pregunta-1" value="siete" required> Siete</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-1" value="ocho"> Ocho</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-1" value="nueve"> Nueve</label>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pregunta-1" value="siete" required> Siete</label>
+            <label class="opcion"><input type="radio" name="pregunta-1" value="ocho"> Ocho</label>
+            <label class="opcion"><input type="radio" name="pregunta-1" value="nueve"> Nueve</label>
           </div>
         </fieldset>
 
-        <fieldset class="quiz-question" data-respuesta="tierra">
+        <fieldset class="pregunta" data-respuesta="tierra">
           <legend>2. ¿Cuál es el tercer planeta desde el Sol?</legend>
-          <div class="quiz-options">
-            <label class="quiz-option"><input type="radio" name="pregunta-2" value="venus" required> Venus</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-2" value="tierra"> La Tierra</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-2" value="marte"> Marte</label>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pregunta-2" value="venus" required> Venus</label>
+            <label class="opcion"><input type="radio" name="pregunta-2" value="tierra"> La Tierra</label>
+            <label class="opcion"><input type="radio" name="pregunta-2" value="marte"> Marte</label>
           </div>
         </fieldset>
 
-        <fieldset class="quiz-question" data-respuesta="mercurio">
+        <fieldset class="pregunta" data-respuesta="mercurio">
           <legend>3. ¿Cuál es el planeta más cercano al Sol?</legend>
-          <div class="quiz-options">
-            <label class="quiz-option"><input type="radio" name="pregunta-3" value="mercurio" required> Mercurio</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-3" value="marte"> Marte</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-3" value="jupiter"> Júpiter</label>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pregunta-3" value="mercurio" required> Mercurio</label>
+            <label class="opcion"><input type="radio" name="pregunta-3" value="marte"> Marte</label>
+            <label class="opcion"><input type="radio" name="pregunta-3" value="jupiter"> Júpiter</label>
           </div>
         </fieldset>
 
-        <fieldset class="quiz-question" data-respuesta="voyager">
+        <fieldset class="pregunta" data-respuesta="voyager">
           <legend>4. ¿Qué sondas visitaron Júpiter y Saturno y continúan su viaje espacial?</legend>
-          <div class="quiz-options">
-            <label class="quiz-option"><input type="radio" name="pregunta-4" value="curiosity" required> Curiosity</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-4" value="voyager"> Voyager 1 y 2</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-4" value="cassini"> Cassini-Huygens</label>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pregunta-4" value="curiosity" required> Curiosity</label>
+            <label class="opcion"><input type="radio" name="pregunta-4" value="voyager"> Voyager 1 y 2</label>
+            <label class="opcion"><input type="radio" name="pregunta-4" value="cassini"> Cassini-Huygens</label>
           </div>
         </fieldset>
 
-        <fieldset class="quiz-question" data-respuesta="gravedad">
+        <fieldset class="pregunta" data-respuesta="gravedad">
           <legend>5. ¿Qué mantiene a los planetas en órbita alrededor del Sol?</legend>
-          <div class="quiz-options">
-            <label class="quiz-option"><input type="radio" name="pregunta-5" value="viento" required> El viento solar</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-5" value="gravedad"> La gravedad</label>
-            <label class="quiz-option"><input type="radio" name="pregunta-5" value="luz"> La luz</label>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="pregunta-5" value="viento" required> El viento solar</label>
+            <label class="opcion"><input type="radio" name="pregunta-5" value="gravedad"> La gravedad</label>
+            <label class="opcion"><input type="radio" name="pregunta-5" value="luz"> La luz</label>
           </div>
         </fieldset>
 
-        <div class="quiz-actions">
-          <button class="button-link" type="submit">Ver resultado</button>
-          <button class="quiz-reset" type="reset">Borrar respuestas</button>
+        <div class="botones-formulario">
+          <button class="boton" type="submit">Ver resultado</button>
+          <button class="borrar" type="reset">Borrar respuestas</button>
         </div>
-        <p class="quiz-result" id="resultado-cuestionario" role="status" aria-live="polite" tabindex="-1" hidden></p>
+        <p class="resultado" id="resultado-cuestionario" role="status" aria-live="polite" tabindex="-1" hidden></p>
       </form>
     </main>
 
-    <aside class="side-note">
+    <aside class="nota">
       <h2>¿Quieres repasar?</h2>
       <p>Explora los datos de los planetas o conoce algunas misiones que estudian nuestro vecindario cósmico.</p>
       <a href="planetas.html">Visita la sección de planetas <span aria-hidden="true">→</span></a>
       <a href="misiones.html">Conoce las misiones espaciales <span aria-hidden="true">→</span></a>
     </aside>
 
-    <footer class="site-footer">
+    <footer class="pie">
       <p>Proyecto de práctica web · UPT · Profesora Eddy Machado</p>
       <p>© 2026 El Sistema Solar</p>
     </footer>

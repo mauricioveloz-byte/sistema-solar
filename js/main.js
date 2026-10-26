@@ -58,11 +58,11 @@ function cambiarDestacado() {
   const tarjeta = document.getElementById(this.getAttribute("data-tarjeta"));
 
   if (tarjeta && this.getAttribute("aria-pressed") === "false") {
-    tarjeta.classList.add("destacada");
+    tarjeta.classList.add("resaltada");
     this.textContent = "Quitar destacado";
     this.setAttribute("aria-pressed", "true");
   } else if (tarjeta) {
-    tarjeta.classList.remove("destacada");
+    tarjeta.classList.remove("resaltada");
     this.textContent = "Destacar";
     this.setAttribute("aria-pressed", "false");
   }

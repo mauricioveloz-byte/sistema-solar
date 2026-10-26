@@ -9,15 +9,15 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="page-layout">
+  <div class="pagina">
     <!-- Encabezado con el nombre del proyecto y el menú de navegación. -->
-    <header class="site-header">
-      <a class="brand" href="index.html">EL SISTEMA SOLAR</a>
-      <p class="tagline">Un recorrido por nuestro vecindario cósmico</p>
+    <header class="encabezado">
+      <a class="marca" href="index.html">EL SISTEMA SOLAR</a>
+      <p class="lema">Un recorrido por nuestro vecindario cósmico</p>
       <nav aria-label="Navegación principal">
-        <ul class="nav-list">
+        <ul class="menu">
           <li><a href="index.html">Inicio</a></li>
-          <li><a class="current" aria-current="page" href="planetas.html">Planetas</a></li>
+          <li><a class="activo" aria-current="page" href="planetas.html">Planetas</a></li>
           <li><a href="misiones.html">Misiones</a></li>
           <li><a href="cuestionario.html">Cuestionario</a></li>
         </ul>
@@ -25,80 +25,80 @@
     </header>
 
     <!-- Contenido central con grupos, tarjetas y tabla de planetas. -->
-    <main class="main-content">
-      <section class="page-intro" aria-labelledby="titulo-principal">
-        <p class="eyebrow">Ocho mundos, dos grupos</p>
+    <main class="contenido">
+      <section class="introduccion" aria-labelledby="titulo-principal">
+        <p class="etiqueta">Ocho mundos, dos grupos</p>
         <h1 id="titulo-principal">Los planetas</h1>
         <p>Por su ubicación y composición, los planetas se clasifican en interiores y exteriores.</p>
       </section>
 
       <!-- Los planetas interiores son rocosos y están cerca del Sol. -->
-      <section class="content-section" aria-labelledby="interiores">
+      <section class="seccion" aria-labelledby="interiores">
         <h2 id="interiores">Planetas interiores</h2>
-        <p class="section-lead">Son los cuatro planetas más cercanos al Sol. Tienen una superficie rocosa.</p>
-        <div class="planet-grid">
-          <article class="planet-card" id="tarjeta-mercurio">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-mercurio" aria-hidden="false">
+        <p class="resumen">Son los cuatro planetas más cercanos al Sol. Tienen una superficie rocosa.</p>
+        <div class="rejilla-planetas">
+          <article class="tarjeta" id="tarjeta-mercurio">
+            <div class="interior">
+              <section class="frente" id="frente-mercurio" aria-hidden="false">
                 <img src="img/mercurio.jpg" alt="Superficie y cráteres del planeta Mercurio" loading="lazy">
-                <div class="planet-card-copy"><h3>Mercurio</h3><p>El planeta más cercano al Sol y el más pequeño.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-mercurio" type="button" data-tarjeta="tarjeta-mercurio" data-frente="frente-mercurio" data-reverso="reverso-mercurio" aria-expanded="false" aria-controls="reverso-mercurio">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-mercurio" type="button" data-tarjeta="tarjeta-mercurio" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Mercurio</h3><p>El planeta más cercano al Sol y el más pequeño.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-mercurio" type="button" data-tarjeta="tarjeta-mercurio" data-frente="frente-mercurio" data-reverso="reverso-mercurio" aria-expanded="false" aria-controls="reverso-mercurio">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-mercurio" type="button" data-tarjeta="tarjeta-mercurio" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-mercurio" aria-label="Más información sobre Mercurio" aria-hidden="true">
+              <section class="reverso" id="reverso-mercurio" aria-label="Más información sobre Mercurio" aria-hidden="true">
                 <h3>Mercurio</h3>
                 <p>Mercurio es el planeta más pequeño y el más cercano al Sol. Su superficie tiene muchos cráteres.</p>
                 <button class="boton-volver" id="volver-mercurio" type="button" data-tarjeta="tarjeta-mercurio" data-frente="frente-mercurio" data-reverso="reverso-mercurio" data-boton-detalles="detalle-mercurio">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-venus">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-venus" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-venus">
+            <div class="interior">
+              <section class="frente" id="frente-venus" aria-hidden="false">
                 <img src="img/venus.jpg" alt="Vista del planeta Venus" loading="lazy">
-                <div class="planet-card-copy"><h3>Venus</h3><p>Un mundo rocoso con una atmósfera muy densa.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-venus" type="button" data-tarjeta="tarjeta-venus" data-frente="frente-venus" data-reverso="reverso-venus" aria-expanded="false" aria-controls="reverso-venus">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-venus" type="button" data-tarjeta="tarjeta-venus" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Venus</h3><p>Un mundo rocoso con una atmósfera muy densa.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-venus" type="button" data-tarjeta="tarjeta-venus" data-frente="frente-venus" data-reverso="reverso-venus" aria-expanded="false" aria-controls="reverso-venus">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-venus" type="button" data-tarjeta="tarjeta-venus" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-venus" aria-label="Más información sobre Venus" aria-hidden="true">
+              <section class="reverso" id="reverso-venus" aria-label="Más información sobre Venus" aria-hidden="true">
                 <h3>Venus</h3>
                 <p>Venus tiene una atmósfera muy densa y es el planeta más caliente del Sistema Solar.</p>
                 <button class="boton-volver" id="volver-venus" type="button" data-tarjeta="tarjeta-venus" data-frente="frente-venus" data-reverso="reverso-venus" data-boton-detalles="detalle-venus">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-tierra">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-tierra" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-tierra">
+            <div class="interior">
+              <section class="frente" id="frente-tierra" aria-hidden="false">
                 <img src="img/tierra.jpg" alt="La Tierra, nuestro planeta, vista desde el espacio" loading="lazy">
-                <div class="planet-card-copy"><h3>Tierra</h3><p>El único planeta conocido con vida en su superficie.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-tierra" type="button" data-tarjeta="tarjeta-tierra" data-frente="frente-tierra" data-reverso="reverso-tierra" aria-expanded="false" aria-controls="reverso-tierra">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-tierra" type="button" data-tarjeta="tarjeta-tierra" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Tierra</h3><p>El único planeta conocido con vida en su superficie.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-tierra" type="button" data-tarjeta="tarjeta-tierra" data-frente="frente-tierra" data-reverso="reverso-tierra" aria-expanded="false" aria-controls="reverso-tierra">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-tierra" type="button" data-tarjeta="tarjeta-tierra" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-tierra" aria-label="Más información sobre la Tierra" aria-hidden="true">
+              <section class="reverso" id="reverso-tierra" aria-label="Más información sobre la Tierra" aria-hidden="true">
                 <h3>Tierra</h3>
                 <p>La Tierra tiene agua líquida en su superficie y es el único planeta conocido que alberga vida.</p>
                 <button class="boton-volver" id="volver-tierra" type="button" data-tarjeta="tarjeta-tierra" data-frente="frente-tierra" data-reverso="reverso-tierra" data-boton-detalles="detalle-tierra">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-marte">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-marte" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-marte">
+            <div class="interior">
+              <section class="frente" id="frente-marte" aria-hidden="false">
                 <img src="img/marte.jpg" alt="El planeta Marte, de color rojizo" loading="lazy">
-                <div class="planet-card-copy"><h3>Marte</h3><p>Se reconoce por su color rojizo y sus grandes volcanes.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-marte" type="button" data-tarjeta="tarjeta-marte" data-frente="frente-marte" data-reverso="reverso-marte" aria-expanded="false" aria-controls="reverso-marte">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-marte" type="button" data-tarjeta="tarjeta-marte" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Marte</h3><p>Se reconoce por su color rojizo y sus grandes volcanes.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-marte" type="button" data-tarjeta="tarjeta-marte" data-frente="frente-marte" data-reverso="reverso-marte" aria-expanded="false" aria-controls="reverso-marte">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-marte" type="button" data-tarjeta="tarjeta-marte" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-marte" aria-label="Más información sobre Marte" aria-hidden="true">
+              <section class="reverso" id="reverso-marte" aria-label="Más información sobre Marte" aria-hidden="true">
                 <h3>Marte</h3>
                 <p>Marte es conocido como el planeta rojo. Tiene volcanes enormes, valles y señales de agua antigua.</p>
                 <button class="boton-volver" id="volver-marte" type="button" data-tarjeta="tarjeta-marte" data-frente="frente-marte" data-reverso="reverso-marte" data-boton-detalles="detalle-marte">Volver al planeta</button>
@@ -109,75 +109,75 @@
       </section>
 
       <!-- Los planetas exteriores se encuentran más allá del cinturón de asteroides. -->
-      <section class="content-section" aria-labelledby="exteriores">
+      <section class="seccion" aria-labelledby="exteriores">
         <h2 id="exteriores">Planetas exteriores</h2>
-        <p class="section-lead">Están más lejos del Sol. Júpiter y Saturno son gigantes gaseosos; Urano y Neptuno, gigantes helados.</p>
-        <div class="planet-grid">
-          <article class="planet-card" id="tarjeta-jupiter">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-jupiter" aria-hidden="false">
+        <p class="resumen">Están más lejos del Sol. Júpiter y Saturno son gigantes gaseosos; Urano y Neptuno, gigantes helados.</p>
+        <div class="rejilla-planetas">
+          <article class="tarjeta" id="tarjeta-jupiter">
+            <div class="interior">
+              <section class="frente" id="frente-jupiter" aria-hidden="false">
                 <img src="img/jupiter.jpg" alt="Bandas de nubes del planeta Júpiter" loading="lazy">
-                <div class="planet-card-copy"><h3>Júpiter</h3><p>El planeta más grande, famoso por la Gran Mancha Roja.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-jupiter" type="button" data-tarjeta="tarjeta-jupiter" data-frente="frente-jupiter" data-reverso="reverso-jupiter" aria-expanded="false" aria-controls="reverso-jupiter">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-jupiter" type="button" data-tarjeta="tarjeta-jupiter" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Júpiter</h3><p>El planeta más grande, famoso por la Gran Mancha Roja.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-jupiter" type="button" data-tarjeta="tarjeta-jupiter" data-frente="frente-jupiter" data-reverso="reverso-jupiter" aria-expanded="false" aria-controls="reverso-jupiter">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-jupiter" type="button" data-tarjeta="tarjeta-jupiter" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-jupiter" aria-label="Más información sobre Júpiter" aria-hidden="true">
+              <section class="reverso" id="reverso-jupiter" aria-label="Más información sobre Júpiter" aria-hidden="true">
                 <h3>Júpiter</h3>
                 <p>Júpiter es el planeta más grande. La Gran Mancha Roja es una tormenta que se observa desde hace mucho tiempo.</p>
                 <button class="boton-volver" id="volver-jupiter" type="button" data-tarjeta="tarjeta-jupiter" data-frente="frente-jupiter" data-reverso="reverso-jupiter" data-boton-detalles="detalle-jupiter">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-saturno">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-saturno" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-saturno">
+            <div class="interior">
+              <section class="frente" id="frente-saturno" aria-hidden="false">
                 <img src="img/saturno.jpg" alt="Saturno y sus anillos vistos desde el espacio" loading="lazy">
-                <div class="planet-card-copy"><h3>Saturno</h3><p>Un gigante gaseoso rodeado por brillantes anillos.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-saturno" type="button" data-tarjeta="tarjeta-saturno" data-frente="frente-saturno" data-reverso="reverso-saturno" aria-expanded="false" aria-controls="reverso-saturno">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-saturno" type="button" data-tarjeta="tarjeta-saturno" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Saturno</h3><p>Un gigante gaseoso rodeado por brillantes anillos.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-saturno" type="button" data-tarjeta="tarjeta-saturno" data-frente="frente-saturno" data-reverso="reverso-saturno" aria-expanded="false" aria-controls="reverso-saturno">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-saturno" type="button" data-tarjeta="tarjeta-saturno" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-saturno" aria-label="Más información sobre Saturno" aria-hidden="true">
+              <section class="reverso" id="reverso-saturno" aria-label="Más información sobre Saturno" aria-hidden="true">
                 <h3>Saturno</h3>
                 <p>Saturno es un gigante gaseoso. Sus anillos están formados principalmente por fragmentos de hielo y roca.</p>
                 <button class="boton-volver" id="volver-saturno" type="button" data-tarjeta="tarjeta-saturno" data-frente="frente-saturno" data-reverso="reverso-saturno" data-boton-detalles="detalle-saturno">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-urano">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-urano" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-urano">
+            <div class="interior">
+              <section class="frente" id="frente-urano" aria-hidden="false">
                 <img src="img/urano.jpg" alt="El planeta Urano visto por una sonda espacial" loading="lazy">
-                <div class="planet-card-copy"><h3>Urano</h3><p>Un gigante helado que gira con una inclinación extrema.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-urano" type="button" data-tarjeta="tarjeta-urano" data-frente="frente-urano" data-reverso="reverso-urano" aria-expanded="false" aria-controls="reverso-urano">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-urano" type="button" data-tarjeta="tarjeta-urano" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Urano</h3><p>Un gigante helado que gira con una inclinación extrema.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-urano" type="button" data-tarjeta="tarjeta-urano" data-frente="frente-urano" data-reverso="reverso-urano" aria-expanded="false" aria-controls="reverso-urano">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-urano" type="button" data-tarjeta="tarjeta-urano" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-urano" aria-label="Más información sobre Urano" aria-hidden="true">
+              <section class="reverso" id="reverso-urano" aria-label="Más información sobre Urano" aria-hidden="true">
                 <h3>Urano</h3>
                 <p>Urano es un gigante helado. Su eje está muy inclinado, por eso parece girar de lado.</p>
                 <button class="boton-volver" id="volver-urano" type="button" data-tarjeta="tarjeta-urano" data-frente="frente-urano" data-reverso="reverso-urano" data-boton-detalles="detalle-urano">Volver al planeta</button>
               </section>
             </div>
           </article>
-          <article class="planet-card" id="tarjeta-neptuno">
-            <div class="planet-card-inner">
-              <section class="planet-card-front" id="frente-neptuno" aria-hidden="false">
+          <article class="tarjeta" id="tarjeta-neptuno">
+            <div class="interior">
+              <section class="frente" id="frente-neptuno" aria-hidden="false">
                 <img src="img/neptuno.jpg" alt="El planeta azul Neptuno" loading="lazy">
-                <div class="planet-card-copy"><h3>Neptuno</h3><p>El planeta más lejano del Sol y azotado por fuertes vientos.</p></div>
-                <div class="planet-card-actions">
-                  <button class="boton-detalles" id="detalle-neptuno" type="button" data-tarjeta="tarjeta-neptuno" data-frente="frente-neptuno" data-reverso="reverso-neptuno" aria-expanded="false" aria-controls="reverso-neptuno">Ver detalles</button>
-                  <button class="boton-destacar" id="destacar-neptuno" type="button" data-tarjeta="tarjeta-neptuno" aria-pressed="false">Destacar</button>
+                <div class="texto-tarjeta"><h3>Neptuno</h3><p>El planeta más lejano del Sol y azotado por fuertes vientos.</p></div>
+                <div class="botones-tarjeta">
+                  <button class="boton-detalle" id="detalle-neptuno" type="button" data-tarjeta="tarjeta-neptuno" data-frente="frente-neptuno" data-reverso="reverso-neptuno" aria-expanded="false" aria-controls="reverso-neptuno">Ver detalles</button>
+                  <button class="boton-resaltar" id="destacar-neptuno" type="button" data-tarjeta="tarjeta-neptuno" aria-pressed="false">Destacar</button>
                 </div>
               </section>
-              <section class="planet-card-back" id="reverso-neptuno" aria-label="Más información sobre Neptuno" aria-hidden="true">
+              <section class="reverso" id="reverso-neptuno" aria-label="Más información sobre Neptuno" aria-hidden="true">
                 <h3>Neptuno</h3>
                 <p>Neptuno es el planeta más lejano del Sol. Tiene un color azul y vientos muy rápidos.</p>
-                <button class="boton-volver" id="volver-neptuno" type="button" data-tarjeta="tarjeta-neptuno" data-frente="frente-neptuno" data-reverso="reverso-neptuno" data-boton-detalles="detalle-neptuno">Volver al planeta</button>
+                        <button class="boton-volver" id="volver-neptuno" type="button" data-tarjeta="tarjeta-neptuno" data-frente="frente-neptuno" data-reverso="reverso-neptuno" data-boton-detalles="detalle-neptuno">Volver al planeta</button>
               </section>
             </div>
           </article>
@@ -185,9 +185,9 @@
       </section>
 
       <!-- La tabla permite comparar datos básicos de los ocho planetas. -->
-      <section class="content-section" aria-labelledby="tabla-planetas">
+      <section class="seccion" aria-labelledby="tabla-planetas">
         <h2 id="tabla-planetas">Comparación de algunos planetas</h2>
-        <div class="table-wrap">
+        <div class="tabla">
           <table>
             <caption>Diámetro aproximado y distancia media al Sol</caption>
             <thead><tr><th scope="col">Planeta</th><th scope="col">Diámetro (km)</th><th scope="col">Distancia al Sol (millones de km)</th></tr></thead>
@@ -208,14 +208,14 @@
     </main>
 
     <!-- Nota lateral para resumir la clasificación planetaria. -->
-    <aside class="side-note">
+    <aside class="nota">
       <h2>Una forma de recordarlos</h2>
       <p>Los planetas interiores son rocosos. Los exteriores son mucho más grandes y están separados por el cinturón de asteroides.</p>
       <a href="misiones.html">Conoce cómo los exploramos <span aria-hidden="true">→</span></a>
     </aside>
 
     <!-- Pie compartido por las páginas del proyecto. -->
-    <footer class="site-footer">
+    <footer class="pie">
       <p>Proyecto de práctica web · UPT · Profesora Eddy Machado</p>
       <p>© 2026 El Sistema Solar</p>
     </footer>
