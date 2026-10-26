@@ -9,14 +9,14 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="contenedor-pagina">
+  <div class="page-layout">
     <!-- Encabezado con el nombre del proyecto y el menú de navegación. -->
-    <header class="encabezado-sitio">
-      <a class="marca-proyecto" href="index.html">EL SISTEMA SOLAR</a>
-      <p class="lema-proyecto">Un recorrido por nuestro vecindario cósmico</p>
+    <header class="site-header">
+      <a class="brand" href="index.html">EL SISTEMA SOLAR</a>
+      <p class="tagline">Un recorrido por nuestro vecindario cósmico</p>
       <nav aria-label="Navegación principal">
-        <ul class="lista-navegacion">
-          <li><a class="pagina-actual" aria-current="page" href="index.html">Inicio</a></li>
+        <ul class="nav-list">
+          <li><a class="current" aria-current="page" href="index.html">Inicio</a></li>
           <li><a href="planetas.html">Planetas</a></li>
           <li><a href="misiones.html">Misiones</a></li>
         </ul>
@@ -24,27 +24,34 @@
     </header>
 
     <!-- Contenido central de la portada. -->
-    <main class="contenido-principal">
-      <section class="portada" aria-labelledby="titulo-principal">
-        <div class="texto-portada">
-          <p class="etiqueta-seccion">Proyecto académico · UPT</p>
+    <main class="main-content">
+      <section class="hero" aria-labelledby="titulo-principal">
+        <div class="hero-copy">
+          <p class="eyebrow">Proyecto académico · UPT</p>
           <h1 id="titulo-principal">El Sistema Solar</h1>
           <p>Ocho planetas, una estrella y muchos mundos por descubrir. Aquí comienza nuestro viaje por el espacio.</p>
-          <a class="enlace-destacado" href="planetas.html">Conocer los planetas</a>
+          <a class="button-link" href="planetas.html">Conocer los planetas</a>
         </div>
-        <img class="imagen-portada" src="img/tierra.jpg" alt="La Tierra vista desde el espacio">
+        <iframe
+          class="hero-video"
+          src="https://www.youtube.com/embed/libKVRa01L8?autoplay=1&mute=1&loop=1&playlist=libKVRa01L8&playsinline=1"
+          title="Video del Sistema Solar"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
       </section>
 
-      <section class="seccion-contenido" aria-labelledby="que-es">
-        <p class="etiqueta-seccion">Una familia de mundos</p>
+      <section class="content-section" aria-labelledby="que-es">
+        <p class="eyebrow">Una familia de mundos</p>
         <h2 id="que-es">¿Qué es el Sistema Solar?</h2>
-        <article class="panel-texto">
+        <article class="text-panel">
           <p>Es el conjunto formado por el Sol y todos los cuerpos que giran a su alrededor. Incluye ocho planetas, sus satélites, planetas enanos, asteroides y cometas.</p>
           <p>La gravedad del Sol mantiene a estos cuerpos en sus órbitas. La Tierra es el tercer planeta y, hasta donde sabemos, el único que alberga vida.</p>
         </article>
       </section>
 
-      <section class="seccion-contenido datos-rapidos" aria-label="Datos rápidos">
+      <section class="content-section fact-strip" aria-label="Datos rápidos">
         <article><strong>1</strong><span>estrella: el Sol</span></article>
         <article><strong>8</strong><span>planetas conocidos</span></article>
         <article><strong>4.6</strong><span>mil millones de años</span></article>
@@ -52,14 +59,14 @@
     </main>
 
     <!-- Nota lateral con un dato breve del Sistema Solar. -->
-    <aside class="nota-lateral">
+    <aside class="side-note">
       <h2>¿Sabías que...?</h2>
       <p>La luz del Sol tarda alrededor de 8 minutos y 20 segundos en llegar a la Tierra.</p>
       <a href="misiones.html">Explora las misiones espaciales <span aria-hidden="true">→</span></a>
     </aside>
 
     <!-- Pie compartido por las páginas del proyecto. -->
-    <footer class="pie-pagina">
+    <footer class="site-footer">
       <p>Proyecto de práctica web · UPT · Profesora Eddy Machado</p>
       <p>© 2026 El Sistema Solar</p>
     </footer>
