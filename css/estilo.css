@@ -12,6 +12,17 @@ body {
   line-height: 1.6;
 }
 
+@keyframes entrada-pagina {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 a {
   color: #58d6c5;
   text-decoration: none;
@@ -30,9 +41,9 @@ p {
 }
 
 /* 2. Grid organiza encabezado, contenido, lateral y pie de página. */
-.contenedor-pagina {
+.page-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     "header"
     "content"
@@ -41,9 +52,10 @@ p {
   gap: 20px;
   max-width: 1120px;
   margin: 0 auto;
+  animation: entrada-pagina 0.7s ease-out both;
 }
 
-.encabezado-sitio {
+.site-header {
   grid-area: header;
   padding: 20px;
   border-radius: 12px;
@@ -51,19 +63,19 @@ p {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
 }
 
-.marca-proyecto {
+.brand {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.lema-proyecto {
+.tagline {
   margin: 4px 0 16px;
   color: #c5d1df;
 }
 
 /* 3. Flexbox alinea los enlaces del menú y elimina las viñetas. */
-.lista-navegacion {
+.nav-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
@@ -72,7 +84,7 @@ p {
   list-style: none;
 }
 
-.lista-navegacion a {
+.nav-list a {
   display: inline-block;
   padding: 7px 10px;
   color: #ffffff;
@@ -80,14 +92,14 @@ p {
   transition: background-color 0.2s ease;
 }
 
-.lista-navegacion a:hover,
-.lista-navegacion a.pagina-actual {
+.nav-list a:hover,
+.nav-list a.current {
   color: #ffc857;
   background-color: #415a77;
 }
 
 /* 4. Apariencia de las áreas principales de cada página. */
-.contenido-principal {
+.main-content {
   grid-area: content;
   min-width: 0;
   padding: 14px;
@@ -96,7 +108,7 @@ p {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
 }
 
-.nota-lateral {
+.side-note {
   grid-area: sidebar;
   align-self: start;
   padding: 18px;
@@ -105,15 +117,15 @@ p {
   background-color: #263b53;
 }
 
-.nota-lateral h2 {
+.side-note h2 {
   font-size: 1.1rem;
 }
 
-.nota-lateral p {
+.side-note p {
   color: #d2dce7;
 }
 
-.pie-pagina {
+.site-footer {
   grid-area: footer;
   display: flex;
   justify-content: space-between;
@@ -125,12 +137,12 @@ p {
   background-color: #1b263b;
 }
 
-.pie-pagina p {
+.site-footer p {
   margin: 0;
 }
 
-/* 5. Portada: texto e imagen se colocan en dos columnas. */
-.portada {
+/* 5. Portada: texto y video se colocan en dos columnas. */
+.hero {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -138,34 +150,54 @@ p {
   padding: 15px 0 25px;
 }
 
-.portada h1,
-.introduccion-pagina h1 {
-  font-size: 2.4rem;
+@keyframes hero-video-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1,
+.page-intro h1 {
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
   line-height: 1.2;
 }
 
-.texto-portada p,
-.introduccion-pagina p,
-.introduccion-seccion {
+.hero-copy p,
+.page-intro p,
+.section-lead {
   color: #c5d1df;
 }
 
-.imagen-portada {
+.hero-video {
+  display: block;
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border: 0;
   border-radius: 12px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  animation: hero-video-entrada 0.8s ease-out both;
 }
 
-.etiqueta-seccion {
+@media (prefers-reduced-motion: reduce) {
+  .page-layout,
+  .hero-video {
+    animation: none;
+  }
+}
+
+.eyebrow {
   color: #58d6c5;
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.enlace-destacado {
+.button-link {
   display: inline-block;
   padding: 10px 15px;
   color: #0c1b2a;
@@ -177,18 +209,18 @@ p {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.enlace-destacado:hover {
+.button-link:hover {
   color: #0c1b2a;
   background-color: #ffc857;
   transform: translateY(-2px);
 }
 
 /* 6. Secciones de texto y datos breves. */
-.seccion-contenido {
+.content-section {
   margin: 25px 0;
 }
 
-.lista-misiones {
+.mission-list {
   position: relative;
   display: grid;
   gap: 14px;
@@ -196,7 +228,7 @@ p {
   padding-left: 22px;
 }
 
-.lista-misiones::before {
+.mission-list::before {
   position: absolute;
   top: 12px;
   bottom: 12px;
@@ -206,7 +238,7 @@ p {
   content: "";
 }
 
-.elemento-mision {
+.mission-item {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -222,7 +254,7 @@ p {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.elemento-mision::before {
+.mission-item::before {
   position: absolute;
   top: 24px;
   left: -23px;
@@ -234,47 +266,47 @@ p {
   content: "";
 }
 
-.elemento-mision:hover {
+.mission-item:hover {
   border-color: #58d6c5;
   transform: translateX(3px);
 }
 
-.datos-mision {
+.mission-meta {
   display: flex;
   grid-area: meta;
   flex-direction: column;
   gap: 2px;
 }
 
-.anio-mision {
+.mission-year {
   color: #ffc857;
   font-size: 1.35rem;
   font-weight: bold;
   line-height: 1.2;
 }
 
-.hito-mision {
+.mission-milestone {
   color: #c5d1df;
   font-size: 0.75rem;
 }
 
-.texto-mision {
+.mission-copy {
   grid-area: copy;
   min-width: 0;
 }
 
-.texto-mision h2 {
+.mission-copy h2 {
   margin-bottom: 6px;
   color: #ffffff;
   font-size: 1.1rem;
 }
 
-.texto-mision p {
+.mission-copy p {
   margin: 0;
   color: #c5d1df;
 }
 
-.etiqueta-mision {
+.mission-tag {
   grid-area: tag;
   align-self: start;
   padding: 4px 9px;
@@ -284,29 +316,29 @@ p {
   font-size: 0.75rem;
 }
 
-.panel-texto {
+.text-panel {
   padding: 18px;
   border-left: 4px solid #58d6c5;
   border-radius: 5px;
   background-color: #0d1b2a;
 }
 
-.panel-texto p:last-child {
+.text-panel p:last-child {
   margin-bottom: 0;
 }
 
-.datos-rapidos,
-.rejilla-planetas {
+.fact-strip,
+.planet-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
 }
 
-.datos-rapidos {
+.fact-strip {
   grid-template-columns: 1fr;
 }
 
-.datos-rapidos article {
+.fact-strip article {
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -314,17 +346,17 @@ p {
   background-color: #0d1b2a;
 }
 
-.datos-rapidos strong {
+.fact-strip strong {
   color: #ffc857;
   font-size: 1.7rem;
 }
 
-.datos-rapidos span {
+.fact-strip span {
   color: #c5d1df;
 }
 
 /* 7. Tarjetas de planetas: borde, sombra y movimiento al pasar el cursor. */
-.tarjeta-planeta {
+.planet-card {
   overflow: hidden;
   perspective: 1200px;
   border: 2px solid #415a77;
@@ -334,13 +366,13 @@ p {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.tarjeta-planeta:hover {
+.planet-card:hover {
   border-color: #58d6c5;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
   transform: translateY(-3px) scale(1.01);
 }
 
-.tarjeta-planeta img {
+.planet-card img {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -348,25 +380,25 @@ p {
   background-color: #0d1b2a;
 }
 
-.interior-tarjeta-planeta {
+.planet-card-inner {
   display: grid;
   grid-template: 1fr / 1fr;
   transform-style: preserve-3d;
   transition: transform 0.65s ease;
 }
 
-.frente-tarjeta-planeta,
-.reverso-tarjeta-planeta {
+.planet-card-front,
+.planet-card-back {
   grid-area: 1 / 1;
   backface-visibility: hidden;
 }
 
-.frente-tarjeta-planeta {
+.planet-card-front {
   display: flex;
   flex-direction: column;
 }
 
-.reverso-tarjeta-planeta {
+.planet-card-back {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -378,43 +410,43 @@ p {
   transform: rotateY(180deg);
 }
 
-.reverso-tarjeta-planeta h3 {
+.planet-card-back h3 {
   margin: 0;
   color: #ffc857;
 }
 
-.reverso-tarjeta-planeta p {
+.planet-card-back p {
   margin: 0;
   color: #c5d1df;
 }
 
-.tarjeta-planeta.girada .interior-tarjeta-planeta {
+.planet-card.girada .planet-card-inner {
   transform: rotateY(180deg);
 }
 
-.texto-tarjeta-planeta {
+.planet-card-copy {
   padding: 14px;
 }
 
-.texto-tarjeta-planeta h3 {
+.planet-card-copy h3 {
   margin-bottom: 5px;
   color: #ffc857;
 }
 
-.texto-tarjeta-planeta p {
+.planet-card-copy p {
   margin-bottom: 0;
   color: #c5d1df;
 }
 
 /* El JavaScript agrega esta clase cuando se destaca una tarjeta. */
-.tarjeta-planeta.destacada {
+.planet-card.destacada {
   border-color: #ffc857;
   background-color: #263b53;
   box-shadow: 0 0 0 3px rgba(255, 200, 87, 0.25);
 }
 
 /* Botones que abren los detalles y destacan cada planeta. */
-.botones-tarjeta-planeta {
+.planet-card-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -424,6 +456,7 @@ p {
 .boton-detalles,
 .boton-destacar,
 .boton-volver {
+  min-height: 44px;
   padding: 9px 12px;
   color: #ffffff;
   border: 1px solid #58d6c5;
@@ -441,17 +474,18 @@ p {
   background-color: #58d6c5;
 }
 
-.enlace-destacado:focus-visible,
+.button-link:focus-visible,
 .boton-detalles:focus-visible,
 .boton-destacar:focus-visible,
 .boton-volver:focus-visible,
-.lista-navegacion a:focus-visible {
+.nav-list a:focus-visible {
   outline: 3px solid #ffc857;
   outline-offset: 3px;
 }
 
 /* 8. Tabla comparativa de datos de los planetas. */
-.contenedor-tabla {
+.table-wrap {
+  max-width: 100%;
   overflow-x: auto;
   border-radius: 10px;
 }
@@ -480,23 +514,58 @@ th {
   color: #58d6c5;
 }
 
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .page-layout {
+    gap: 14px;
+  }
+
+  .site-header {
+    padding: 16px;
+  }
+
+  .main-content {
+    padding: 12px;
+  }
+
+  .nav-list a {
+    min-height: 44px;
+    padding: 9px 10px;
+  }
+
+  .hero {
+    gap: 16px;
+  }
+
+  .mission-item {
+    padding: 12px;
+  }
+
+  .text-panel {
+    padding: 14px;
+  }
+}
+
 /* En pantallas medianas, las tarjetas comparten filas. */
 @media (min-width: 481px) {
-  .rejilla-planetas {
+  .planet-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .datos-rapidos {
+  .fact-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .contenido-principal {
+  .main-content {
     padding: 20px;
   }
 }
 
 @media (min-width: 601px) {
-  .elemento-mision {
+  .mission-item {
     grid-template-columns: 105px minmax(0, 1fr) auto;
     grid-template-areas: "meta copy tag";
     align-items: start;
@@ -507,7 +576,7 @@ th {
 
 /* En pantallas grandes, el contenido y la barra lateral van en columnas. */
 @media (min-width: 761px) {
-  .contenedor-pagina {
+  .page-layout {
     grid-template-columns: minmax(0, 1fr) 260px;
     grid-template-areas:
       "header header"
@@ -515,7 +584,7 @@ th {
       "footer footer";
   }
 
-  .portada {
+  .hero {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
