@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Algunas misiones espaciales que exploran el Sistema Solar.">
+  <title>El Sistema Solar | Misiones</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="contenedor-pagina">
+    <!-- Encabezado con el nombre del proyecto y el menú de navegación. -->
+    <header class="encabezado-sitio">
+      <a class="marca-proyecto" href="index.html">EL SISTEMA SOLAR</a>
+      <p class="lema-proyecto">Un recorrido por nuestro vecindario cósmico</p>
+      <nav aria-label="Navegación principal">
+        <ul class="lista-navegacion">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="planetas.html">Planetas</a></li>
+          <li><a class="pagina-actual" aria-current="page" href="misiones.html">Misiones</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contenido central sobre ejemplos de exploración espacial. -->
+    <main class="contenido-principal">
+      <section class="introduccion-pagina" aria-labelledby="titulo-principal">
+        <p class="etiqueta-seccion">Exploración espacial</p>
+        <h1 id="titulo-principal">Misiones que amplían nuestro conocimiento</h1>
+        <p>Robots, telescopios y sondas viajan por el espacio para estudiar mundos que todavía no podemos visitar en persona.</p>
+      </section>
+
+      <!-- Cada artículo resume una misión o un proyecto de exploración. -->
+      <section class="lista-misiones" aria-label="Ejemplos de misiones espaciales">
+        <article class="elemento-mision">
+          <div class="datos-mision"><time class="anio-mision" datetime="1977">1977</time><span class="hito-mision">Lanzamiento</span></div>
+          <div class="texto-mision"><h2>Voyager 1 y 2</h2><p>Visitaron Júpiter y Saturno. Voyager 1 continúa su viaje por el espacio interestelar y ambas sondas han ampliado nuestro conocimiento de los límites del Sistema Solar.</p></div>
+          <span class="etiqueta-mision">Sondas</span>
+        </article>
+        <article class="elemento-mision">
+          <div class="datos-mision"><time class="anio-mision" datetime="1997">1997</time><span class="hito-mision">Lanzamiento</span></div>
+          <div class="texto-mision"><h2>Cassini-Huygens</h2><p>Estudió Saturno, sus anillos y sus lunas. En 2005, la sonda Huygens descendió sobre Titán y envió datos desde su superficie.</p></div>
+          <span class="etiqueta-mision">Saturno</span>
+        </article>
+        <article class="elemento-mision">
+          <div class="datos-mision"><time class="anio-mision" datetime="2011">2011</time><span class="hito-mision">Lanzamiento</span></div>
+          <div class="texto-mision"><h2>Curiosity</h2><p>El vehículo llegó al cráter Gale de Marte en 2012. Analiza rocas y suelo para investigar si el planeta tuvo condiciones adecuadas para la vida.</p></div>
+          <span class="etiqueta-mision">Marte</span>
+        </article>
+        <article class="elemento-mision">
+          <div class="datos-mision"><time class="anio-mision" datetime="2021">2021</time><span class="hito-mision">Lanzamiento</span></div>
+          <div class="texto-mision"><h2>James Webb</h2><p>Observa el universo en luz infrarroja. Sus datos ayudan a estudiar la formación de estrellas y las atmósferas de algunos planetas fuera del Sistema Solar.</p></div>
+          <span class="etiqueta-mision">Telescopio</span>
+        </article>
+      </section>
+
+      <section class="seccion-contenido">
+        <article class="panel-texto panel-resaltado">
+          <h2>¿Por qué explorar?</h2>
+          <p>Las misiones espaciales permiten estudiar la composición, el clima y la historia de otros cuerpos. Sus instrumentos envían datos e imágenes que los científicos analizan desde la Tierra.</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Nota lateral sobre la comunicación con las sondas. -->
+    <aside class="nota-lateral">
+      <h2>Exploradores robóticos</h2>
+      <p>Una sonda puede tardar años en llegar a su destino. Durante el viaje, usa antenas para comunicarse con estaciones en la Tierra.</p>
+      <a href="planetas.html">Ver los mundos explorados <span aria-hidden="true">→</span></a>
+      <a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">Fuente de consulta: NASA</a>
+    </aside>
+
+    <!-- Pie compartido por las páginas del proyecto. -->
+    <footer class="pie-pagina">
+      <p>Proyecto de práctica web · UPT · Profesora Eddy Machado</p>
+      <p>© 2026 El Sistema Solar</p>
+    </footer>
+  </div>
+</body>
+</html>
